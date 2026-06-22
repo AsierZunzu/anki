@@ -38,7 +38,7 @@ jobs:
           if [ -n "${{ inputs.anki_version }}" ]; then
             VERSION="${{ inputs.anki_version }}"
           else
-            VERSION="$(curl -fsSL https://api.github.com/repos/ankitects/anki/releases/latest | jq -r .tag_name)"
+            VERSION="$(curl -fsSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/ankitects/anki/releases/latest | jq -r .tag_name)"
           fi
           if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
             echo "Failed to resolve Anki version" >&2
