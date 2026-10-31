@@ -10,7 +10,7 @@ RUN cargo install --git https://github.com/ankitects/anki.git \
 --locked \
 anki-sync-server
 
-FROM alpine:3.24.2
+FROM alpine:3.24.3
 
 # Default PUID and PGID values (can be overridden at runtime). Use these to
 # ensure the files on the volume have the permissions you need.
