@@ -1,4 +1,6 @@
-FROM rust:1.100.0-alpine3.24 AS builder
+# Anki pins its Rust toolchain (rust-toolchain.toml); newer releases may fail
+# to compile it, so only patch updates are taken here (see dependabot.yml).
+FROM rust:1.99.1-alpine3.24 AS builder
 
 ARG ANKI_VERSION
 

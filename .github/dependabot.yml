@@ -7,6 +7,11 @@ updates:
       day: saturday
       time: "10:00"
       timezone: Europe/Madrid
+    ignore:
+      # Anki pins its Rust toolchain and may not compile with newer minors.
+      # Bump the rust minor manually when Anki's rust-toolchain.toml does.
+      - dependency-name: "rust"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
