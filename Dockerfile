@@ -1,6 +1,6 @@
 # Anki pins its Rust toolchain (rust-toolchain.toml); newer releases may fail
 # to compile it. Dependabot bumps are checked by the validate workflow.
-FROM rust:1.99.1-alpine3.24 AS builder
+FROM rust:1.99-alpine AS builder
 
 ARG ANKI_VERSION
 
